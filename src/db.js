@@ -1,0 +1,1 @@
+module.exports = require("mongo-utility")('mongodb+srv://Ricky:hereitis1@cluster0-ar1xu.mongodb.net/test')

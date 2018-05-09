@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+  <head> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="jquery-csv.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.js"></script>
+  </head>
+
+  <body>
+
+    <button id="send" disabled onclick="signIn()"> DISABLED </button>
+
+    <input id="file" type="file" accept=".csv" onchange="getUploadedFile()" />
+
+    <p> Password Strength </p>
+    <p id="indicator"> </p>
+
+    <form action="http://localhost:3002/payment" method="post">
+      Email:
+      <br>
+      <input id="email" type="email" name="firstname" required>
+      <br>
+      <br>
+      Password:
+      <br>
+      <input id="password" type="password" name="lastname" required >
+      <br>
+      <br>
+      Industry:
+      <br>
+      <input type="text" name="lastname">
+      <br>
+      <br>
+      <br>
+      <input type="submit" value="/payment"> </input>
+      <!-- <input type="hidden" name="resulturl" value="payment.html"> -->
+    </form>
+
+    <button name="button" value="like "action="http://localhost:3002/form" method="post" type="submit">Button</button>
+
+    <p>Note that the form itself is not visible.</p>
+    <p>Also note that the default width of a text field is 20 characters.</p>
+
+    <button>
+      <a href="/payment"> Add Payment </a>
+    </button>
+
+
+
+    <p id='userAnswer'> HERP DERP </p>
+    <input id='question' type="text" />
+    <button id='sendQuery' onclick="getAnswer()"> SEND </button> 
+    
+
+
+<script>
+  $(document).ready(function(){
+    $("#password").keyup( checkPasswordStrength )
+  })
+
+</script>
+
+
+<script>
+   
+   function checkPasswordStrength(){
+        password = $("#password").val()
+        p = $("#indicator")
+         value = zxcvbn(password).score
+         switch(value){
+            case 0:
+              p.text("Bad")
+              $("#send").text("DISABLED")
+              $("#send").prop('disabled', true);
+              break;
+            case 1:
+              p.text("Weak")
+              $("#send").text("DISABLED")
+              $("#send").prop('disabled', true);
+              break;
+            case 2:
+              p.text("Ok")
+              $("#send").text("DISABLED")
+              $("#send").prop('disabled', true);
+              break;
+            case 3:
+              p.text("Good")
+              $("#send").text("ENABLED")
+              $("#send").prop('disabled', false);
+              break;
+            case 4:
+              p.text("Strong")
+              $("#send").text("ENABLED")
+              $("#send").prop('disabled', false);
+              break;
+         }
+         if (password.value == ''){
+            p.text('')
+         }
+        }
+
+
+      function signIn(){
+
+        email = $("#email").val() 
+        password = $("#password").val()
+
+
+        return fetch(`http://localhost:2999/login`, {
+          method:"POST",
+          headers: {
+            'Accept': 'POST',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({email, password}),
+        })
+        .then((res) => {
+          console.log('res:: ', res);
+          if (res.status === 200) {
+            return res.json()
+          } else {
+            throw res;
+          }
+        })
+        .then( (success) => {
+            console.log("SUCCESS MESSAGE", success)
+            console.log("SUCCESS MESSAGE", success.error)
+            if (success.err)
+              return success.err
+            return success
+        }) 
+        .catch ( (err) => {
+          console.log("ERROR", err)
+        })
+
+      }
+
+
+      function getUploadedFile(){
+        console.log("Running")
+        file = $("#file").prop('files')[0]
+
+        if (file) {
+            // create reader
+            var reader = new FileReader();
+            reader.readAsText(file);
+            reader.onload = function(e) {
+
+                herp = $.csv.toObjects(e.target.result)
+                console.log(herp)
+
+                return fetch(`http://localhost:2999/uploadFile`, {
+                  method:"POST",
+                  headers: {
+                    'Accept': 'POST',
+                    'Content-Type': 'application/json'
+                  },
+                  body:JSON.stringify(herp),
+                })
+
+            };
+        }
+      }
+
+
+      function getAnswer(){
+
+        // alert("Running")
+
+        return fetch(`http://localhost:2999/query`, {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({query: $('#question').val() }),
+        })
+        .then( (res)=>{
+          return res.json()
+        })
+        .then( (answer)=> {
+          $('#userAnswer').text(answer.answer)
+          console.log("ANSWER:", answer)
+        })
+
+      }
+        
+  </script>
+
+
+
+  </body>
+
+</html>
