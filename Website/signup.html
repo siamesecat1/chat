@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sign Up | Sapien</title>
+        <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+        <!-- Core css -->
+        <link rel="stylesheet" id="bulma" href="assets/css/bulma.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/core_deep-blue.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+        <!-- Plugins css -->
+        <link rel="stylesheet" type="text/css" href="assets/js/ggpopover/ggtooltip.css">
+        <!-- Icons -->
+        <link rel="stylesheet" type="text/css" href="assets/css/icons.min.css">
+    </head>
+
+    <body>
+        <!-- Pageloader -->
+        <div class="pageloader"></div>
+        <div class="infraloader is-active"></div>
+
+        <!-- Hero and nav -->
+        <div class="hero hero-wavy is-relative is-light-grey huge-pb">
+            <div class="navbar-wrapper navbar-fade">
+                <div class="hero-head">
+                    <!-- Nav -->
+                    <div class="container">
+                        <nav class="nav">
+                            <div class="container big">
+                                <div class="nav-left">
+                                    <a class="nav-item" href="index.html">
+                                        <img src="assets/images/logos/bulkit-logo-deep-blue.png" alt="">
+                                    </a>
+                                    <a href="index.html#features" class="nav-item is-tab nav-inner is-not-mobile">
+                                        Features
+                                    </a>
+                                    <a href="index.html#pricing" class="nav-item is-tab nav-inner is-not-mobile">
+                                        Pricing
+                                    </a>
+                                </div>
+                                <!-- Responsive toggle -->
+                                <span class="nav-toggle">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                                <div class="nav-right nav-menu">
+
+                                    <a href="index.html#features" class="nav-item is-tab nav-inner is-menu-mobile">
+                                        Features
+                                    </a>
+                                    <a href="index.html#pricing" class="nav-item is-tab nav-inner is-menu-mobile">
+                                        Pricing
+                                    </a>
+                                    <span class="nav-item">
+                                        <a id="signup-btn" href="login.html" class="button button-signup btn-outlined is-bold btn-align secondary-btn rounded">
+                                            Log in
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <!-- /Nav -->
+                </div>
+            </div>
+
+            <!-- Hero -->
+            <div id="main-hero" class="hero-body">
+                <div class="container has-text-centered">
+                    <div class="columns is-vcentered pt-50 pb-50">
+
+                        <!-- Signup form -->
+                        <div class="column is-5 is-offset-2 z-index-2">
+                            <div id="signup-card" class="animated preFadeInLeft fadeInLeft">
+                                <div class="flex-card clean-signup-card">
+                                    <h2 class="has-text-centered text-bold">Get Started</h2>
+                                    <form>
+                                        <div class="control-material is-secondary">      
+                                            <input class="material-input" type="text" required>
+                                            <span class="material-highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Email *</label>
+                                        </div>
+                                        <div class="control-material is-secondary">      
+                                            <input class="material-input" type="text" required>
+                                            <span class="material-highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Company Name *</label>
+                                        </div>
+                                        <div class="control-material is-secondary">      
+                                            <input class="material-input" type="text" required>
+                                            <span class="material-highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Password *</label>
+                                        </div>
+
+                                        <div class="mt-20">
+                                            <button class="button button-cta btn-align secondary-btn is-fullwidth rounded raised no-lh">Get started now</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Signup form -->
+                        
+                        <!-- Signup features -->
+                        <div class="column is-4 z-index-2">
+                            <div class="flex-card signup-context secondary-card light-raised padding-40 is-hidden-mobile">
+                                <h2 class="title is-4 is-landing-light has-text-centered light-text">What you get.</h2>
+                                <!-- Icon block -->
+                                <div class="argument">
+                                    <div class="icon">
+                                        <i class="im im-icon-Timer-2"></i>
+                                    </div>
+                                    <div class="argument-text light-text">
+                                        <b>7-day</b> free trial
+                                    </div>
+                                </div>
+                                <!-- Icon block -->
+                                <div class="argument">
+                                    <div class="icon">
+                                        <i class="im im-icon-Support"></i>
+                                    </div>
+                                    <div class="argument-text light-text">
+                                        Get help from our team
+                                    </div>
+                                </div>
+                                <!-- Icon block -->
+                                <div class="argument pb-40">
+                                    <div class="icon">
+                                        <i class="im im-icon-Love-User"></i>
+                                    </div>
+                                    <div class="argument-text light-text">
+                                        <b>Your visitors</b> will thank you
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Signup features -->
+                    </div>
+                </div>
+            </div>
+            <!-- /Hero image -->
+        </div>
+        <!-- /Hero and nav -->
+
+        <!-- Footer light -->
+        <footer class="footer footer-light">
+            <div class="container">
+                <div class="columns footer-columns is-flex-mobile">
+                    <div class="column is-half-mobile">
+                        <!-- Column -->
+                        <div class="footer-column">
+                            <div class="footer-header">
+                                <h3>Product</h3>
+                            </div>
+                            <ul class="link-list">
+                                <li><a href="features.html">Discover features</a></li>
+                                <li><a href="features.html">CMS integration</a></li>
+                                <li><a href="#">Customers</a></li>
+                                <li><a href="#">Weekly sessions</a></li>
+                                <li><a href="#">Free trials and demo</a></li>
+                                <li><a href="#">What's next ?</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column is-half-mobile">
+                        <!-- Column -->
+                        <div class="footer-column">
+                            <div class="footer-header">
+                                <h3>Company</h3>
+                            </div>
+                            <ul class="link-list">
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">About security</a></li>
+                                <li><a href="#">User guide</a></li>
+                                <li><a href="#">Terms of service</a></li>
+                                <li><a href="#">Terms of website use</a></li>
+                                <li><a href="#">Privacy policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column is-half-mobile">
+                        <!-- Column -->
+                        <div class="footer-column">
+                            <div class="footer-header">
+                                <h3>Learning</h3>
+                            </div>
+                            <ul class="link-list">
+                                <li><a href="contact.html">Resources</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">API documentation</a></li>
+                                <li><a href="#">Admin guide</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column is-half-mobile">
+                        <!-- Column -->
+                        <div class="footer-column">
+                            <div class="footer-logo">
+                                <img src="assets/images/logos/bulkit-logo-deep-blue.png" alt="">
+                            </div>
+                            <div class="footer-header">
+                                <nav class="level is-mobile">
+                                    <div class="level-left level-social">
+                                        <a class="level-item">
+                                            <span class="icon"><i class="fa fa-facebook"></i></span>
+                                        </a>
+                                        <a class="level-item">
+                                            <span class="icon"><i class="fa fa-twitter"></i></span>
+                                        </a>
+                                        <a class="level-item">
+                                            <span class="icon"><i class="fa fa-linkedin"></i></span>
+                                        </a>
+                                        <a class="level-item">
+                                            <span class="icon"><i class="fa fa-dribbble"></i></span>
+                                        </a>
+                                        <a class="level-item">
+                                            <span class="icon"><i class="fa fa-github"></i></span>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="copyright">
+                                <span class="moto dark-text">© Sapien 2018</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /Footer light -->
+
+        <!-- Bulchat Button -->
+        <div id="bulchat" class="open"><div class="chat-button open g-item"></div></div>
+
+        <!-- Back To Top Button -->
+        <div id="backtotop"><a href="#"></a></div>
+
+
+
+        <!-- Chat widget -->
+        <div id="chat-widget">
+            <div class="chat-widget-body is-closed">
+                <div class="chat-header">
+                    <div class="close-chat is-hidden-desktop is-hidden-tablet"><img src="assets/images/illustrations/icons/landing-v2/close-small.svg" alt=""></div>
+                    <div class="chat-team">
+                        <div class="team-member has-text-centered">
+                            <img src="https://place-hold.it/250x250" alt="">
+                            <div class="is-handwritten">Alan maynard</div>
+                        </div>
+                    </div>
+                    <div class="response-delay has-text-centered">
+                        Answers in less than 18 hours
+                    </div>
+                </div>
+                <div class="message-container">
+                    <div class="divider">
+                        <span class="before-divider"></span>
+                        <div class="children">Today</div>
+                        <span class="after-divider"></span>
+                    </div>
+                    <div class="chat-message from">
+                        <img src="https://place-hold.it/250x250" alt="">
+                        <div class="bubble-wrapper">
+                            <div class="timestamp">02:49 pm</div>
+                            <div class="chat-bubble">
+                                Hey iam Alan ! Iam here to help. What can i do for you ?
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-message to">
+                        <div class="bubble-wrapper">
+                            <div class="timestamp">02:48 pm</div>
+                            <div class="chat-bubble">
+                                Hello, someone out there ? I could use some help
+                            </div>
+                        </div>
+                        <img src="https://place-hold.it/250x250" alt="">
+                    </div>
+                </div>
+                <div class="message-input">
+                    <textarea class="" rows="1" placeholder="Send a message ..."></textarea>
+                    <div class="message-options">
+                        <div class="emoji-button"></div>
+                        <div class="attach-button"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Chat widget -->
+
+        <!-- Core js -->
+        <script src="assets/js/core/jquery.min.js"></script>
+        <script src="assets/js/core/modernizr.min.js"></script>
+        <!-- Plugins js -->
+        <script src="assets/js/ggpopover/ggtooltip.js"></script>
+        <script src="assets/js/scrollreveal/scrollreveal.min.js"></script>
+        <!-- Bulkit js -->
+        <script src="assets/js/main.js"></script>
+        <!-- Page specific js -->
+        <script src="assets/js/pages/auth.js"></script>
+        <script src="assets/js/pages/landingv2.js"></script>
+
+    </body>
+</html>
